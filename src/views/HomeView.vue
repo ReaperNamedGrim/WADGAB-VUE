@@ -1,7 +1,5 @@
 <template>
   <section class="home">
-    <aside class="home__rail" aria-hidden="true"></aside>
-
     <div class="home__feed">
       <PostCard
         v-for="post in sortedPosts"
@@ -17,8 +15,6 @@
         Reset likes
       </button>
     </div>
-
-    <aside class="home__rail" aria-hidden="true"></aside>
   </section>
 </template>
 
