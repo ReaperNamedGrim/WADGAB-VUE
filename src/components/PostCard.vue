@@ -3,7 +3,7 @@
     <header class="post-card__header">
       <div class="post-card__author-group">
         <img
-          src="/images/profile.png"
+          src="./images/profile.png"
           :alt="`${post.author} profile`"
           :title="post.author"
           class="post-card__avatar-img"
@@ -33,7 +33,7 @@
         @click="likePost"
       >
         <img
-          src="/images/thumb.png"
+          src="./images/thumb.png"
           alt="Like"
           class="post-card__like-icon"
         />
@@ -60,7 +60,7 @@ export default {
       if (!this.post) return '';
       if (this.post.img_local) {
         const fileName = this.post.img_local.split('/').pop();
-        return `/images/${fileName}`;
+        return `./images/${fileName}`;
       }
       return this.post.img_url || '';
     },
