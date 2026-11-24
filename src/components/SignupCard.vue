@@ -109,9 +109,8 @@ export default {
         return;
       }
 
-      // Actual submission logic can be here
-
-      alert("Submission successful! (noop)");
+      // this.$store.commit('setUserEmail', this.email.trim());
+      this.$router.push('/');
     },
   },
 };
