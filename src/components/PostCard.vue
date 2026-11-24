@@ -3,7 +3,7 @@
     <header class="post-card__header">
       <div class="post-card__author-group">
         <img
-          src="./images/profile.png"
+          :src="`${baseUrl}images/profile.png`"
           :alt="`${post.author} profile`"
           :title="post.author"
           class="post-card__avatar-img"
@@ -33,7 +33,7 @@
         @click="likePost"
       >
         <img
-          src="./images/thumb.png"
+          :src="`${baseUrl}images/thumb.png`"
           alt="Like"
           class="post-card__like-icon"
         />
@@ -56,11 +56,14 @@ export default {
     post() {
       return this.$store.state.posts.find((item) => item.id === this.postId);
     },
+    baseUrl() {
+      return process.env.BASE_URL || '/';
+    },
     imageSrc() {
       if (!this.post) return '';
       if (this.post.img_local) {
         const fileName = this.post.img_local.split('/').pop();
-        return `./images/${fileName}`;
+        return `${this.baseUrl}images/${fileName}`;
       }
       return this.post.img_url || '';
     },
